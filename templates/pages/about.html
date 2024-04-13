@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block title %} | About Us {% endblock %}
+{% block content %}
+
+{% load static %}
+
+<!-- Sub banner start -->
+
+<div class="sub-banner  bg-dark">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>About Us</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li class="active ">About Us</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+<!-- Service center strat -->
+<div class="about-car content-area-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-6">
+                <div class="about-car-photo">
+                    <div id="carDetailsSlider" class="carousel car-details-sliders slide">
+                        <div>
+                        <!-- main slider carousel items 
+                        <div class="carousel-inner">
+                            <div class="active item carousel-item" data-slide-number="0">
+                                <img src="{% static 'img/car-1.jpg' %}" class="img-fluid" alt="slider-car">
+                            </div>
+                            <div class="item carousel-item" data-slide-number="1">
+                                <img src="{% static 'img/car-2.jpg' %}" class="img-fluid" alt="slider-car">
+                            </div>
+                            <div class="item carousel-item" data-slide-number="2">
+                                <img src="{% static 'img/car-3.jpg' %}" class="img-fluid" alt="slider-car">
+                            </div>
+                        </div> -->
+                        <!-- main slider carousel nav controls -->
+                        <ul class="carousel-indicators car-properties list-inline nav nav-justified">
+                            <img src="data:image/jpeg;base64,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" alt="disabled">
+
+                           <!-- <li class="list-inline-item active">
+                                <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#carDetailsSlider">
+                                    <img src="C:\Users\ADMIN\Downloads\NM_FRIDAYBATCH_FSWD_PROJECT-main (2)\NM_FRIDAYBATCH_FSWD_PROJECT-main\cardealer\static\img\car-loader.gif" class="img-fluid" alt="small-car">
+                                </a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a id="carousel-selector-1" data-slide-to="1" data-target="#carDetailsSlider">
+                                    <img src="{% static 'img/car-2.jpg' %}" class="img-fluid" alt="small-car">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a id="carousel-selector-2" data-slide-to="2" data-target="#carDetailsSlider">
+                                    <img src="{% static 'img/car-3.jpg' %}" class="img-fluid" alt="small-car">
+                                </a>
+                            </li>-->
+                        </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-6 align-self-center">
+                <div class="best-used-car">
+                    <h3>Welcome to Our World</h3>
+                    <p>
+                        Welcome to Rental, your premier destination for buying and selling quality automobiles. At our car rental website, we're passionate about connecting car enthusiasts with their dream vehicles while providing a seamless and enjoyable experience.
+                        
+                        With years of industry expertise, our team is committed to offering a curated selection of top-notch vehicles, ranging from sleek sedans to rugged SUVs and everything in between. Each car in our inventory undergoes rigorous inspection to ensure that it meets our high standards of quality and performance.
+                        
+                        But we're more than just a marketplace for cars. We're a community of automotive enthusiasts dedicated to fostering trust and transparency in every transaction. Whether you're a first-time buyer or a seasoned car aficionado, our knowledgeable staff is here to assist you every step of the way, from browsing our extensive inventory to securing financing options tailored to your needs.
+                        
+                        At Car Rental, customer satisfaction is our top priority. We strive to provide exceptional service, competitive pricing, and a hassle-free buying experience that exceeds your expectations. Trust us to help you find the perfect vehicle that matches your lifestyle and budget.
+                        
+                        Thank you for choosing Car Rental. Start your journey to automotive excellence today!</p>
+                    <p class="mb-0">electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service center end -->
+
+
+
+<!-- Our team start -->
+<div class="our-team content-area">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>Executive <span>Team</span></h1>
+            <p>Team working behind maintaining the quality of our Car Dealership Website.</p>
+        </div>
+        <!-- Slick slider area start -->
+        <div class="slick-slider-area clearfix">
+            <div class="row slick-carousel" data-slick='{"slidesToShow": 4, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+            {% for team in teams %}
+                <div class="slick-slide-item">
+                    <div class="team-1">
+                        <div class="photo">
+                            <a href="#">
+                                <img src="{{team.photo.url}}" alt="team-1" class="img-fluid">
+                            </a>
+                            <div class="social-list clearfix">
+                                <a href="{{team.facebook_link}}" target="_blank" class="facebook-bg"><i class="fa fa-facebook"></i></a>
+                                <a href="{{team.twitter_link}}" target="_blank" class="twitter-bg"><i class="fa fa-twitter"></i></a>
+                                <a href="{{team.google_plus_link}}" target="_blank" class="google-bg"><i class="fa fa-google"></i></a>
+                            </div>
+                        </div>
+					
+                        <div class="details">
+                            <h4><a href="team-detail.html">{{team.first_name}} {{team.last_name}}</a></h4>
+                            <h5>{{team.designation}}</h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Our team end -->
+{% endblock %}
